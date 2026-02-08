@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Abhipriya ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #ffe6f0, #fff5fa);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  margin: 10vh auto;
+  max-width: 90%;
+  background: rgba(255,255,255,0.95);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 2;
+}
+
+h2 {
+  color: #e60073;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.emoji {
+  position: fixed;
+  top: -10px;
+  font-size: 24px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+.sound-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.sound-btn {
+  background: #ff4d88;
+  color: white;
+  border: none;
+  padding: 16px 26px;
+  border-radius: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+<body>
+
+<div class="sound-overlay" id="overlay">
+  <button class="sound-btn" onclick="startLove()">▶ Tap to play music 🎶</button>
+</div>
+
+<div class="container">
+  <h2>Abhipriya ❤️</h2>
+  <p>
+    aji moi bhal paw buli koileu kom hobo.<br>
+    Tumar hahi, tumar kotha, aru tumar logot thaka protitu khon<br>
+    moi din-bhor bhabi thaku.<br><br>
+
+    Tumi mur monor ekdom nishabd jogotot ahi<br>
+    sobtu hundor kori dila.<br><br>
+
+    Moi tumak bhal paw—hohaj bhabe, huddho bhabe.<br>
+    Jodi tumar monot eitu ekei bhabona ase,<br>
+    tente moi tumar haat dhori<br>
+    aji aru agami dinot tumar logot thakibo bisaru.<br><br>
+
+    <strong>Tumi mur MANUHJONI hoba ne?</strong><br>
+    <strong>I love you ❤️</strong>
+  </p>
+</div>
+
+<audio id="bgm" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2d8b9b7d4c.mp3?filename=romantic-piano-112191.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function startLove() {
+  const audio = document.getElementById("bgm");
+  audio.volume = 0.6;
+  audio.play();
+  document.getElementById("overlay").style.display = "none";
+}
+
+const emojis = ["💖","💕","💘","✨","🌸","😍"];
+for (let i = 0; i < 30; i++) {
+  let e = document.createElement("div");
+  e.className = "emoji";
+  e.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+  e.style.left = Math.random() * 100 + "vw";
+  e.style.animationDuration = (6 + Math.random() * 6) + "s";
+  e.style.fontSize = (20 + Math.random() * 10) + "px";
+  document.body.appendChild(e);
+}
+</script>
+
+</body>
+</html>
